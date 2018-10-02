@@ -1,6 +1,6 @@
 import 'package:flutter_app/actions/actions.dart';
-import 'package:flutter_app/model/app_state.dart';
-import 'package:flutter_app/model/task.dart';
+import 'package:flutter_app/models/app_state.dart';
+import 'package:flutter_app/models/task.dart';
 
 AppState appReducer(AppState state, dynamic action){
   return AppState(
