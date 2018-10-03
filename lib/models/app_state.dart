@@ -1,4 +1,4 @@
-import 'package:flutter_app/model/task.dart';
+import 'package:flutter_app/models/task.dart';
 
 class AppState{
   final List<Task> tasks;

@@ -22,6 +22,7 @@ dependencies:
   flutter_redux:
   http: 0.11.3+17
   date_range_picker: ^1.0.0
+  intl:
 
 dev_dependencies:
   flutter_test:

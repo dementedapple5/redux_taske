@@ -20,6 +20,9 @@ List<Task> taskReducer(List<Task> tasks, dynamic action){
   else if (action is UpdateTaskAction) {
     return updateTask(tasks, action);
   }
+  else if (action is GetTasksByStateAction) {
+    return getTasksByState(tasks, action);
+  }
 
   return tasks;
 }
@@ -27,6 +30,7 @@ List<Task> taskReducer(List<Task> tasks, dynamic action){
 
 
 List<Task> addTask(List<Task> tasks, AddTaskAction action){
+  print(List.of(tasks)..add(action.task));
   return List.of(tasks)..add(action.task);
 }
 
@@ -35,5 +39,10 @@ List<Task> removeTask(List<Task> tasks, RemoveTaskAction action){
 }
 
 List<Task> updateTask(List<Task> tasks, UpdateTaskAction action){
-  return List.of(tasks).map((task) => task.id == action.task.id ? action.task : task).toList();
+  return List.of(tasks)..map((task) => task.id == action.task.id ? action.task : task).toList();
 }
+
+List<Task> getTasksByState(List<Task> tasks, GetTasksByStateAction action){
+  return List.of(tasks)..removeWhere((task) => task.completed != action.completed);
+}
+

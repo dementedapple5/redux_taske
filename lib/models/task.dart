@@ -1,3 +1,4 @@
+import 'package:flutter_app/models/user.dart';
 import 'package:meta/meta.dart';
 
 class Task{
@@ -9,6 +10,9 @@ class Task{
   DateTime initDate;
   DateTime finalDate;
   bool completed;
+  String group;
+  User creator;
+  User targetUser;
 
   Task({
     @required this.title,
@@ -16,6 +20,8 @@ class Task{
     @required this.priority,
     this.initDate,
     this.finalDate,
+    this.group,
+    this.creator,
     this.completed = false
   });
 
@@ -38,6 +44,10 @@ class Task{
     return daysLeft;
   }
 
+  @override
+  String toString() {
+    return 'Task{title: $title, body: $body, priority: $priority, initDate: $initDate, finalDate: $finalDate}';
+  }
 
 
 }
