@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/containers/add_task_sheet.dart';
+import 'package:flutter_app/pages/add_request_page.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 
@@ -39,13 +40,17 @@ class HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () => showDialog(
-            context: context,
-            builder: (context) {
-              return AddTaskDialog();
-            }),
+        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddRequestPage()))
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
+
+/*
+* showDialog(
+            context: context,
+            builder: (context) {
+              return AddTaskDialog();
+            }),
+* */
